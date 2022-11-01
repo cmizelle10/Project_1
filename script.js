@@ -19,7 +19,7 @@ var apiCall1 = async function(string1) {
 }
 // var test = apiCall1(apiString);
 // console.log(test);
-var getMovie = function(apiResult) {
+var getMovie = async function(apiResult) {
     const options = {
         method: 'GET',
         headers: {
@@ -27,9 +27,24 @@ var getMovie = function(apiResult) {
             'X-RapidAPI-Host': 'online-movie-database.p.rapidapi.com'
         }
     };
-     fetch(`https://online-movie-database.p.rapidapi.com/title/find?q=${apiResult}`, options)
-        .then(response => response.json())
-        .then(response => console.log(response.results))
-        .catch(err => console.error(err));
+    let response = await fetch(`https://online-movie-database.p.rapidapi.com/title/find?q=${apiResult}`, options)
+    let data = await response.json();
+    console.log(data.results[0].image["url"])
+    var dataresponse = data.results[0].image["url"]
+    var card = document.createElement("div");
+    card.setAttribute('class', "img class");
+    var movieImg = document.createElement('img');
+    card.append(movieImg);  
+    movieImg.setAttribute('src', dataresponse);
+        // .then(response => response.json())
+        // .then(response => console.log(response.results))
+        // .catch(err => console.error(err));
 }
 apiCall1(apiString);
+
+
+
+// var movieImg = document.createElement('img');
+// movieImg.append()
+
+// movieImg.setAttribute('src', 'movieImg bg-primary h-100 text-white');
