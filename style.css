@@ -1,38 +1,42 @@
+.background {
+    background-color: black;
+    font-family: 'Courier New', Courier, monospace;
+}
 
 .header {
     font-size: 50px;
     font-weight: 600;
-    background-color: red;
+    background-image: radial-gradient(gold, blue);
     height: 125px;
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-bottom: 50px;
+    margin-bottom: 6%;
     margin-left: 50px;
     margin-right: 50px;
-    border-radius: 5px;
+    border-radius: 10px;
     border-style: solid;
-    border-color: black;
+    border-color: rgb(255, 255, 255);
     border-width: 2.5px;
     
 }
 
 .border-1 {
     display: flex;
-    border-radius: 5px;
-    margin-bottom: 10px;
+    
 
 }
 
 .border-1 > div {
     border-style: solid;
-    border-color: rgb(0, 0, 0);
+    border-color: rgb(255, 255, 255);
     border-width: 3px;
-    line-height: 300%;
+    line-height: 400%;
     width: 886.7px;
     margin-left: 50px;
     margin-right: 50px;
-    background-color: red;
+    background-image: radial-gradient(gold, blue);
+    border-radius: 15px;
 }
 
 
@@ -41,7 +45,9 @@
     flex-wrap: wrap;
     font-size: 50px;
     font-weight: 500;
-    margin-bottom: 100px;
+    margin-bottom: 90px;
+    font-weight: 550;
+    margin-left: 5px;
 }
 
 .input {
@@ -50,6 +56,41 @@
     border-radius: 5px;
     margin: 10px;
     border-style: solid;
-    border-color: black;
+    border-color: rgb(0, 0, 0);
     border-width: 2.5px;
+    color: black;
+    background-color: rgb(255, 255, 197);
+}
+
+.button {
+    color: rgb(0, 0, 0);
+    background-color: rgb(255, 255, 197);
+    border-radius: 7px;
+    border-style: solid;
+    border-color: rgb(0, 0, 0);
+    border-width: 2px;
+    height: 33px;
+    width: 12%;
+    display: flexbox;
+}
+
+
+.tryme img {
+    height: 300px;
+    margin-left: 70%;
+    display: flexbox;
+}
+
+.answer-movie {
+    margin-left: 5px;
+    font-size: 20px;
+    display: flexbox;
+}
+
+.button:hover {background-color: rgb(255, 255, 41)}
+
+
+.button:active {
+    transform: translateY(4px);
+    display: flexbox;
 }

@@ -8,7 +8,7 @@ var apiCall1 = async function(string1) {
     const options = {
         method: 'GET',
         headers: {
-            'X-RapidAPI-Key': '3ebc1f76c0mshef9eda572bd8879p1d1b63jsn7d3240cccc5a',
+            'X-RapidAPI-Key': 'ffa3000414msh344555768ec4681p1303dfjsn649283dc7eec',
             'X-RapidAPI-Host': 'movie-quote.p.rapidapi.com'
         }
     };
@@ -39,16 +39,11 @@ var getMovie = async function(apiResult) {
     card.setAttribute('class', 'img-class');
     card.append(movieImg);
     target.append(card);
-
         // .then(response => response.json())
         // .then(response => console.log(response.results))
         // .catch(err => console.error(err));
 }
 apiCall1(apiString);
-
-
-
 // var movieImg = document.createElement('img');
 // movieImg.append()
-
 // movieImg.setAttribute('src', 'movieImg bg-primary h-100 text-white');
