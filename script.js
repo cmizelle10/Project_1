@@ -1,6 +1,7 @@
 var userInput = "He is the chosen one";
 var userInputParsed = userInput.split(" ");
 var word = ("");
+var target = document.querySelector('.tryme');
 var userInputParsedAPI = userInputParsed.join("%20");
 apiString = 'https://movie-quote.p.rapidapi.com/movie/' + userInputParsedAPI;
 var apiCall1 = async function(string1) {
@@ -29,13 +30,16 @@ var getMovie = async function(apiResult) {
     };
     let response = await fetch(`https://online-movie-database.p.rapidapi.com/title/find?q=${apiResult}`, options)
     let data = await response.json();
-    console.log(data.results[0].image["url"])
-    var dataresponse = data.results[0].image["url"]
-    var card = document.createElement("div");
-    card.setAttribute('class', "img class");
+    console.log(data.results[0].image["url"]);
+    var imgresponse = data.results[0].image["url"];
+    console.log(imgresponse);
     var movieImg = document.createElement('img');
-    card.append(movieImg);  
-    movieImg.setAttribute('src', dataresponse);
+    movieImg.setAttribute('src', imgresponse);
+    var card = document.createElement('div');
+    card.setAttribute('class', 'img-class');
+    card.append(movieImg);
+    target.append(card);
+
         // .then(response => response.json())
         // .then(response => console.log(response.results))
         // .catch(err => console.error(err));
