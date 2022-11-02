@@ -75,10 +75,20 @@
 }
 
 
-.tryme img {
+/*.tryme img {
     height: 300px;
     margin-left: 70%;
     display: flexbox;
+}*/
+/* fixed image placement and size by adding sizing to parent container. */
+.tryme img {
+    height: 100%;
+    width: 100%;
+}
+
+.tryme {
+    width: 100%;
+    height: 100%;
 }
 
 .answer-movie {
