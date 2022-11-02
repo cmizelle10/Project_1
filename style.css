@@ -1,22 +1,25 @@
 .background {
-    background-color: black;
+    background-color: skyblue;
     font-family: 'Courier New', Courier, monospace;
 }
 
 .header {
+    color: white;
+    text-shadow: -3px -3px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
     font-size: 50px;
     font-weight: 600;
-    background-image: radial-gradient(gold, blue);
+    background-image: url(./picture/depositphotos_59943251-stock-illustration-seamless-pattern-of-doodle-colorful.jpg);
     height: 125px;
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-bottom: 6%;
+    margin: 0px;
+    margin-bottom: 3%;
     margin-left: 50px;
     margin-right: 50px;
     border-radius: 10px;
     border-style: solid;
-    border-color: rgb(255, 255, 255);
+    border-color: rgb(0, 0, 0);
     border-width: 2.5px;
     
 }
@@ -29,13 +32,13 @@
 
 .border-1 > div {
     border-style: solid;
-    border-color: rgb(255, 255, 255);
+    border-color: rgb(0, 0, 0);
     border-width: 3px;
     line-height: 400%;
     width: 886.7px;
     margin-left: 50px;
     margin-right: 50px;
-    background-image: radial-gradient(gold, blue);
+    background-image: linear-gradient(rgb(183, 161, 138 ), rgba(0, 0, 0, 0.411) );
     border-radius: 15px;
 }
 
@@ -48,6 +51,7 @@
     margin-bottom: 90px;
     font-weight: 550;
     margin-left: 5px;
+    text-shadow: -1px -1px 0 rgb(255, 255, 255), 1px -1px 0 rgb(255, 255, 255), -1px 1px 0 rgb(255, 255, 255), 1px 1px 0 rgb(255, 255, 255);
 }
 
 .input {
@@ -59,12 +63,12 @@
     border-color: rgb(0, 0, 0);
     border-width: 2.5px;
     color: black;
-    background-color: rgb(255, 255, 197);
+    background-color: rgba(135, 207, 235, 0.685);
 }
 
 .button {
     color: rgb(0, 0, 0);
-    background-color: rgb(255, 255, 197);
+    background-color: rgba(135, 207, 235, 0.685);
     border-radius: 7px;
     border-style: solid;
     border-color: rgb(0, 0, 0);
@@ -92,9 +96,9 @@
 }
 
 .answer-movie {
-    margin-left: 5px;
-    font-size: 20px;
+    font-size: 35px;
     display: flexbox;
+    text-shadow: -1px -1px 0 rgb(255, 255, 255), 1px -1px 0 rgb(255, 255, 255), -1px 1px 0 rgb(255, 255, 255), 1px 1px 0 rgb(255, 255, 255);
 }
 
 .button:hover {background-color: rgb(255, 255, 41)}
@@ -102,5 +106,24 @@
 
 .button:active {
     transform: translateY(4px);
+    display: flexbox;
+}
+
+.list {
+    list-style-type: none;
+}
+
+.actor-name {
+    font-size: 20px;
+    display: flexbox;
+}
+
+.run-time {
+    font-size: 20px;
+    display: flexbox;
+}
+
+.release-date {
+    font-size: 20px;
     display: flexbox;
 }
