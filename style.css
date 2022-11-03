@@ -86,8 +86,9 @@
 }*/
 /* fixed image placement and size by adding sizing to parent container. */
 .tryme img {
-    height: 100%;
-    width: 100%;
+    height: 75%;
+    width: 75%;
+    align-items: center;
 }
 
 .tryme {
