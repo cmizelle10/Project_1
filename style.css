@@ -114,6 +114,12 @@
     list-style-type: none;
 }
 
+.movie-title {
+    font-size: 20px;
+    display: flexbox;
+    font-weight: bolder; 
+}
+
 .actor-name {
     font-size: 20px;
     display: flexbox;

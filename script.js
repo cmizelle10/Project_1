@@ -3,6 +3,7 @@ var target = document.querySelector('.tryme');
 var actorsName = document.querySelector('.actor-name');
 var runTime = document.querySelector('.run-time');
 var year = document.querySelector('.release-date');
+var title = document.querySelector('.movie-title')
 var textArea = document.querySelector('.textarea');
 var movieImg = document.createElement('img');
 var card = document.createElement('div');
@@ -55,6 +56,7 @@ var getMovie = async function(apiResult) {
        
         actors.push(actorI);
       }
+    var movieTitle = data.results[0].title;
     var run = data.results[0].runningTimeInMinutes;
     var date = data.results[0].year;
     var imgresponse = data.results[0].image["url"];
@@ -63,13 +65,16 @@ var getMovie = async function(apiResult) {
     card.remove();
     card.append(movieImg);
     target.append(card);
+    title.textContent = "";
     actorsName.textContent = "";
     runTime.textContent = "";
     year.textContent = "";
+    title.append(movieTitle);
     actorsName.append(actors);
     actorsName.textContent = actorsName.textContent.replaceAll(" ,", ",");
     runTime.append(run +" Minutes");
     year.append(date);
+    
 }
 
 searchButton.addEventListener("click", (e) => {
