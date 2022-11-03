@@ -3,6 +3,8 @@ var target = document.querySelector('.tryme');
 var actorsName = document.querySelector('.actor-name');
 var runTime = document.querySelector('.run-time');
 var year = document.querySelector('.release-date');
+var textArea = document.querySelector('.textarea');
+
 
 var apiCall1 = async function(apiStringArg) {
     let apiString = 'https://movie-quote.p.rapidapi.com/movie/' + apiStringArg;
@@ -32,7 +34,14 @@ var getMovie = async function(apiResult) {
     let data = await response.json();
     actors = [];
     for (let i = 0; i < data.results[0].principals.length; i++) {
-        actorI = data.results[0].principals[i]["legacyNameText"];
+        if (i === 0) {
+            actorI = data.results[0].principals[i]["legacyNameText"] + " ";
+        }
+
+        else {
+            actorI = data.results[0].principals[i]["legacyNameText"].slice(0) + " "; 
+        }
+       
         actors.push(actorI);
       }
     console.log("Main Actors: " + actors)
@@ -42,7 +51,7 @@ var getMovie = async function(apiResult) {
     var date = data.results[0].year;
     var imgresponse = data.results[0].image["url"];
     var movieImg = document.createElement('img');
-    movieImg.setAttribute('src', imgresponse);
+    movieImg.setAttribute('src', imgresponse); 
     var card = document.createElement('div');
     card.setAttribute('class', 'img-class');
     card.append(movieImg);
@@ -58,6 +67,13 @@ searchButton.addEventListener("click", function() {
     var input = document.querySelector('#user-input').value;
     var userInput = input.toString();
     var userInputParsed = userInput.split(" ");
+    var history = {quote: input.trim()};
+    localStorage.setItem("history", JSON.stringify(history));
+    textArea.append(history["quote"] + " ");
+    // var history = (window.localStorage.getItem("user-input", input)) || [];
+    
+    // history = localStorage.getItem("user-input", input);
+    console.log(history);
     
     var userInputParsedAPI = userInputParsed.join("%20");
     apiCall1(userInputParsedAPI)
