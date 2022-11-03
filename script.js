@@ -7,6 +7,15 @@ var textArea = document.querySelector('.textarea');
 var movieImg = document.createElement('img');
 var card = document.createElement('div');
 
+var reverseString = function(string) {
+    var string2 = string.split(" ");
+    var string3 = "";
+    for (let i = string2.length - 1; i >= 0; i--) {
+         string3 = string3.concat(string2[i], " ")
+    }
+    return string3;
+}
+
 var apiCall1 = async function(apiStringArg) {
     let apiString = 'https://movie-quote.p.rapidapi.com/movie/' + apiStringArg;
     const options = {
@@ -35,11 +44,13 @@ var getMovie = async function(apiResult) {
     actors = [];
     for (let i = 0; i < data.results[0].principals.length; i++) {
         if (i === 0) {
-            actorI = data.results[0].principals[i]["legacyNameText"] + " ";
+            actorI = data.results[0].principals[i]["legacyNameText"].replace(",", "")
+            actorI = reverseString(actorI);
         }
 
         else {
-            actorI = data.results[0].principals[i]["legacyNameText"].slice(0) + " "; 
+            actorI = data.results[0].principals[i]["legacyNameText"].replace(",", "") + " "; 
+            actorI = reverseString(actorI);
         }
        
         actors.push(actorI);
@@ -56,6 +67,7 @@ var getMovie = async function(apiResult) {
     runTime.textContent = "";
     year.textContent = "";
     actorsName.append(actors);
+    actorsName.textContent = actorsName.textContent.replaceAll(" ,", ",");
     runTime.append(run +" Minutes");
     year.append(date);
 }
