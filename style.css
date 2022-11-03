@@ -21,13 +21,14 @@
     border-style: solid;
     border-color: rgb(0, 0, 0);
     border-width: 2.5px;
-    
+    display: flex;
+    flex-wrap: wrap;
 }
 
 .border-1 {
     display: flex;
+    flex-wrap: wrap;
     
-
 }
 
 .border-1 > div {
@@ -36,8 +37,8 @@
     border-width: 3px;
     line-height: 400%;
     width: 886.7px;
-    margin-left: 50px;
-    margin-right: 50px;
+    /* margin-right: 25px; */
+    margin-left: 33px;
     background-image: linear-gradient(rgb(183, 161, 138 ), rgba(0, 0, 0, 0.411) );
     border-radius: 15px;
 }
@@ -56,7 +57,8 @@
 
 .input {
     display: flexbox;
-    height: 25px;
+    height: 50px;
+    font-size: 25px;
     border-radius: 5px;
     margin: 10px;
     border-style: solid;
@@ -73,8 +75,9 @@
     border-style: solid;
     border-color: rgb(0, 0, 0);
     border-width: 2px;
-    height: 33px;
-    width: 12%;
+    font-size: 20px;
+    height: 50px;
+    width: 24%;
     display: flexbox;
 }
 
@@ -86,23 +89,36 @@
 }*/
 /* fixed image placement and size by adding sizing to parent container. */
 .tryme img {
+    display: flex;
     height: 75%;
     width: 75%;
-    align-items: center;
+    display: flexbox;
+    margin-left: 250px;
+    margin-bottom: 5px;
+    border-radius: 15px;
+    border-style: solid;
+    border-color: white;
 }
 
 .tryme {
-    width: 100%;
-    height: 100%;
+    width: 50%;
+    height: 50%;
+    display: flexbox;
+    display: flex;
+    align-items: flex-start;
+    flex-wrap: wrap;
 }
 
 .answer-movie {
     font-size: 35px;
     display: flexbox;
+    display: flex;
     text-shadow: -1px -1px 0 rgb(255, 255, 255), 1px -1px 0 rgb(255, 255, 255), -1px 1px 0 rgb(255, 255, 255), 1px 1px 0 rgb(255, 255, 255);
+    
 }
 
-.button:hover {background-color: rgb(255, 255, 41)}
+
+.button:hover {background-color: rgb(0, 225, 255)}
 
 
 .button:active {
@@ -112,28 +128,50 @@
 
 .list {
     list-style-type: none;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
 }
 
 .movie-title {
     font-size: 20px;
     display: flexbox;
     font-weight: bolder; 
+    display: flex;
 }
 
 .actor-name {
     font-size: 20px;
     display: flexbox;
     font-weight: bolder;
+    display: flex;
 }
 
 .run-time {
     font-size: 20px;
     display: flexbox;
     font-weight: bolder;
+    display: flex;
 }
 
 .release-date {
     font-size: 20px;
     display: flexbox;
     font-weight: bolder;
+    display: flex;
+}
+
+.textarea {
+    display: flexbox;
+    height: 33px;
+    width: 50%;
+    border-radius: 5px;
+    margin: 10px;
+    border-style: solid;
+    border-color: rgb(0, 0, 0);
+    border-width: 2.5px;
+    color: black;
+    background-color: rgba(123, 168, 185, 0.685);
+    display: flex;
+    font-size: 17px;
 }
