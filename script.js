@@ -4,7 +4,8 @@ var actorsName = document.querySelector('.actor-name');
 var runTime = document.querySelector('.run-time');
 var year = document.querySelector('.release-date');
 var textArea = document.querySelector('.textarea');
-
+var movieImg = document.createElement('img');
+var card = document.createElement('div');
 
 var apiCall1 = async function(apiStringArg) {
     let apiString = 'https://movie-quote.p.rapidapi.com/movie/' + apiStringArg;
@@ -17,7 +18,6 @@ var apiCall1 = async function(apiStringArg) {
     }
     let response = await fetch(apiString, options)
     let data = await response.json()
-    console.log(data)
     var dataresponse = data[0].title
     getMovie(dataresponse)
 }
@@ -44,41 +44,34 @@ var getMovie = async function(apiResult) {
        
         actors.push(actorI);
       }
-    console.log("Main Actors: " + actors)
-    console.log("Running Time: " + data.results[0].runningTimeInMinutes)
-    console.log("Year: " + data.results[0].year)
     var run = data.results[0].runningTimeInMinutes;
     var date = data.results[0].year;
     var imgresponse = data.results[0].image["url"];
-    var movieImg = document.createElement('img');
     movieImg.setAttribute('src', imgresponse); 
-    var card = document.createElement('div');
     card.setAttribute('class', 'img-class');
+    card.remove();
     card.append(movieImg);
     target.append(card);
+    actorsName.textContent = "";
+    runTime.textContent = "";
+    year.textContent = "";
     actorsName.append(actors);
     runTime.append(run +" Minutes");
     year.append(date);
-    
 }
 
-searchButton.addEventListener("click", function() {
-    
+searchButton.addEventListener("click", (e) => {
     var input = document.querySelector('#user-input').value;
     var userInput = input.toString();
     var userInputParsed = userInput.split(" ");
     var history = {quote: input.trim()};
     localStorage.setItem("history", JSON.stringify(history));
     textArea.append(history["quote"] + " ");
-    // var history = (window.localStorage.getItem("user-input", input)) || [];
-    
-    // history = localStorage.getItem("user-input", input);
-    console.log(history);
-    
     var userInputParsedAPI = userInputParsed.join("%20");
     apiCall1(userInputParsedAPI)
+})
 
-    }
+
         
     
-);
+
